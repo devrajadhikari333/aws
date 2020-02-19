@@ -2,6 +2,9 @@ node(){
     stage('checkout'){
         checkout scm
     }
+    stage('Printing Parameter'){
+     sh "echo ${Environment}"   
+    }
     stage('Build'){
         sh "sh variable.sh"
     }
