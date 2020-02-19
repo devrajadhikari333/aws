@@ -1,6 +1,6 @@
 node(){
     stage('checkout'){
-        checout scm
+        checkout scm
     }
     stage('Build'){
         sh "sh variable.sh"
