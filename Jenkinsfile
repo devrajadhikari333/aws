@@ -6,6 +6,6 @@ node(){
         sh "sh variable.sh"
     }
     stage('NOtify'){
-        sh "THis job run successfully"
+        sh " echo THis job run successfully"
     }
 }
