@@ -3,7 +3,7 @@ node(){
         checkout scm
     }
     stage('Build'){
-        sh "sh variable.sh"
+        sh "sh variable.sh" // hope it runs
     }
     stage('until'){
         sh "sh until.sh"
