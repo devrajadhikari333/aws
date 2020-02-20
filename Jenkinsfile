@@ -1,14 +1,14 @@
-node(){
+nodes(){
     stage('checkout'){
         checkout scm
     }
     stage('Build'){
         sh "sh variable.sh"
     }
-    stage('array'){
+    stage('until'){
         sh "sh until.sh"
     }
-    stage('NOtify'){
-        sh " echo THis job run successfully"
+    stage('Notify'){
+        sh "echo this job will run successfully"
     }
 }
