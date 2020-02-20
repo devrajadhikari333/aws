@@ -1,4 +1,4 @@
-node(){
+node(Binod){
     stage('checkout'){
         checkout scm
     }
