@@ -1,0 +1,40 @@
+Some important Linux Command:
+    - $ cd    ( change directory)
+    - $ pwd   ( print working directory)
+    - $ ls    ( list)
+    - $ ls -latr    ( detail list)
+    - $ mkdir ( make directory )
+    - $ touch ( helps to create file )
+    - $ echo  ( display the information )
+             echo " Hello World " > abc.exe
+    - $ cat   ( display the content inside file)
+    - $ rm    ( remove file )
+    - $ mv    ( move file and rename file)
+    - $ sudo  ( become root )
+    - $ rmdir ( remove directory)
+    - $ history ( shows the previously used commands)
+    - $ cp    ( copy file )
+   
+- providing privilege to access the file:   
+    Note: 
+        -rwx-rw-r (file privilege)      -user-group-other ( arrangement)
+                r= read   -> 4 
+                w= write  -> 2
+                x= execute -> 1 = total sum is 7.
+         - 7 is all rwx privilege. 
+         - chmod g-rw [file_name]     ( g-rw means remove read and write privilege )
+         - chmod g+rwx [file_name]    ( g+rwx means add read, write and execute privilege )
+         - chmod 700 [file_name or directory_name]
+ 
+ - Add User
+   - command
+        - $ sudo useradd [username]
+        - $ sudo passwd [username]
+        -$ su -username   (switch user)
+        
+ - change ownership:
+      - $ chown owner:group [file_name]
+      - $ sudo -a -G groupname
+      
+ - Delete Users:
+      - $ sudo userdel -rf username
