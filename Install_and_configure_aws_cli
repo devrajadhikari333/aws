@@ -1,0 +1,11 @@
+Install pip3
+- to install pip3 or python 3 and link the file
+    - command: $ ln -s /usr/bin/python3 /usr/bin/python
+    
+install aws cli
+  - pip3 install awscli--upgrade--user
+
+configure the aws by:
+    - command : $ aws configure
+
+- $ aws ec2 describe-instances
