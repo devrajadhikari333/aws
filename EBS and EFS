@@ -1,0 +1,33 @@
+Elastic Block Storage (EBS)
+  - cloud based block storage system provided by AWS which is used for storing presistent data 
+  - command: $ df -h (shows the free disk size in human understandable format)
+  
+Process:
+   - create volume from the volume tab in AWS
+   - Initial volume is in RAW format. So, first it is attached to the instance and formatted into the redhat readable format. 
+
+Command for EBS:
+   - $ lsblk    (this command shows the list of block in the VM, where we can see xvdf disk format which should be connected into xvda format)
+   - $ sudo file -s /dev/xvdf ( this command shows what format is the volume)
+   - $ sudo mkfs -t xfs /dev/xvdf   ( xfs for aws instances )
+   - $ sudo mkfs -t ext4 /dev/xvdf  ( ext4 for rhel instances )
+   - $ mount dev/xvdf /path/where/volume/needed/to/mounted
+   
+   Note: EBS volume is not permanently mount. To mount permanently, [ /etc/fstab ] file should be edited. 
+   - to identify the UUID, command  - $ blkid
+   - EBS volume cannot be mounted in more than one VM so to overcome this issue EFS can be used.
+
+
+Elastic File System (EFS)
+   - EFS can be mounted in more than one machine not like EBS.
+   - EFS follows NFS protocol, it used network to store the data also known as Network Attached Storage (NAS). Also NFS port should be opened in security group.
+
+Process:
+   - search EFS service in AWS
+   - select the VPC and zome user wants to create EFS
+   - After creating mount the file system to the VM.
+   
+Permanently mount EFS:
+   - command
+        - $ [fs-xxxxx].efs.[region].amazonaws.com:/ /path/where/user/want/to/mount    nfs4 defaults,_netdev 0 0
+   
